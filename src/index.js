@@ -1,13 +1,44 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import Input from "./input";
+import CategoryForm from "./categoryForm";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import reportWebVitals from "./reportWebVitals";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import NewTable from "./newTable";
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+
+//core
+import "primereact/resources/primereact.min.css";
+import ButtonWithMessage from "./messageOnHover";
+const root = ReactDOM.createRoot(document.getElementById("root"));
+const routerObj = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+  {
+    path: "/input",
+    element: <Input />,
+  },
+  {
+    path: "/newtable",
+    element: <NewTable />,
+  },
+  {
+    path: "/categoryForm",
+    element: <CategoryForm />,
+  },
+  {
+    path: "/buttonmessage",
+    element: <ButtonWithMessage />,
+  },
+]);
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={routerObj} />
   </React.StrictMode>
 );
 
