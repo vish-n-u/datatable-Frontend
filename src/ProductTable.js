@@ -74,17 +74,24 @@ const ProductTable = ({
           setIsDeleteButtonClicked={setIsDeleteButtonClicked}
         ></DeleteComponent>
       )}
-      <div className="flex mt-16 m-3 -z-20">
-        <h1 className="font-semibold text-lg mx-5 ">{categoryData.name}</h1>
-        <button
-          onClick={() => {
-            setIsAddDataButtonClicked(true);
-            setEditOrCreate("create");
-          }}
-          className="font-semibold p-2 px-3 text-sm bg-blue-200 rounded-lg active:bg-blue-500 absolute top-[430px] right-[350px]"
-        >
-          Add
-        </button>
+      <div className="flex mt-16 m-3 w-full justify-center items-center">
+        <div className="flex justify-between w-1/2">
+          <h1 className="relative bottom-0 top-8">
+            Total Product qty:- {productDatas[id].length}
+          </h1>
+          <h1 className="font-semibold text-xl mx-5 relative right-8">
+            {categoryData.name}
+          </h1>
+          <button
+            onClick={() => {
+              setIsAddDataButtonClicked(true);
+              setEditOrCreate("create");
+            }}
+            className="font-semibold z-50 p-2 px-3 relative bottom-0 top-5 text-sm bg-blue-200 rounded-lg active:bg-blue-500"
+          >
+            Add
+          </button>
+        </div>
       </div>
 
       <DataTable
