@@ -77,7 +77,7 @@ const ProductTable = ({
       <div className="flex mt-16 m-3 w-full justify-center items-center">
         <div className="flex justify-between w-1/2">
           <h1 className="relative bottom-0 top-8">
-            Total Product qty:- {productDatas[id].length}
+            Total Product qty:- {productDatas?.[id]?.length || 0}
           </h1>
           <h1 className="font-semibold text-xl mx-5 relative right-8">
             {categoryData.name}

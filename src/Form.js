@@ -74,27 +74,50 @@ const Form = ({
                     key={val}
                   >
                     <h1>{val}</h1>
-                    <input
-                      value={
-                        categoryData.valTypes[val] !== "image" ? data[val] : ""
-                      }
-                      type={
-                        categoryData.valTypes[val] !== "image"
-                          ? categoryData.valTypes[val]
-                          : "file"
-                      }
-                      onChange={async (e) => {
-                        if (categoryData.valTypes[val] === "image") {
-                          let newData = await onUpload(e);
-                          let obj = { ...data, [val]: newData };
-                          setData(obj);
-                        } else {
-                          let obj = { ...data, [val]: e.target.value };
-                          setData(obj);
-                        } // console.log("string:==", string, obj, val);
-                      }}
-                      className="bg-blue-50 p-2"
-                    />
+                    {editOrCreate == "edit" ? (
+                      <input
+                        value={
+                          categoryData.valTypes[val] !== "image"
+                            ? data[val]
+                            : ""
+                        }
+                        type={
+                          categoryData.valTypes[val] !== "image"
+                            ? categoryData.valTypes[val]
+                            : "file"
+                        }
+                        onChange={async (e) => {
+                          if (categoryData.valTypes[val] === "image") {
+                            let newData = await onUpload(e);
+                            let obj = { ...data, [val]: newData };
+                            setData(obj);
+                          } else {
+                            let obj = { ...data, [val]: e.target.value };
+                            setData(obj);
+                          } // console.log("string:==", string, obj, val);
+                        }}
+                        className="bg-blue-50 p-2"
+                      />
+                    ) : (
+                      <input
+                        type={
+                          categoryData.valTypes[val] !== "image"
+                            ? categoryData.valTypes[val]
+                            : "file"
+                        }
+                        onChange={async (e) => {
+                          if (categoryData.valTypes[val] === "image") {
+                            let newData = await onUpload(e);
+                            let obj = { ...data, [val]: newData };
+                            setData(obj);
+                          } else {
+                            let obj = { ...data, [val]: e.target.value };
+                            setData(obj);
+                          } // console.log("string:==", string, obj, val);
+                        }}
+                        className="bg-blue-50 p-2"
+                      />
+                    )}
                   </div>
                 );
             })}

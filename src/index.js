@@ -13,6 +13,7 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 //core
 import "primereact/resources/primereact.min.css";
 import ButtonWithMessage from "./messageOnHover";
+import FileInput from "./trial";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const routerObj = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const routerObj = createBrowserRouter([
   {
     path: "/buttonmessage",
     element: <ButtonWithMessage />,
+  },
+  {
+    path: "/file",
+    element: <FileInput />,
   },
 ]);
 root.render(

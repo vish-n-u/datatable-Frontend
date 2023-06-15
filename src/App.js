@@ -32,7 +32,8 @@ async function getTableData(setCategoryDatas, setProductDatas) {
   categoryDatas.message.map((obj) =>
     Object.keys(obj.valTypes).map((key) => {
       if (obj.valTypes[key] === "image") {
-        console.log("keyyyy----", key);
+        console.log("keyyyy-----", key);
+        if (!productObject[obj._id]) return;
         productObject[obj._id].map((product) => {
           product.data[key] = (
             <img
