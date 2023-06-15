@@ -14,4 +14,4 @@ A Simple react project which use primereact and Datatables
 
 ### [BackendLink](https://github.com/vish-n-u/datatable-Backend)
 
-### [VideoLink](https://www.loom.com/share/d7aca5c25af24fb18dc3d39da84bc989?sid=8ffcfc0c-91af-425c-8dda-9dadaf14520b)
+### [VideoLink](https://www.loom.com/share/8fb50ffa1fb5476592d366b28521acee?sid=23d75711-9371-420d-adfe-892348e311e8)
